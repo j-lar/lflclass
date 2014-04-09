@@ -6,4 +6,4 @@ chomp($current_year = <STDIN>);
 $age = $current_year - $birth_year;
 $future_age = $age + 15;
 print "\nYour current age is $age.\n";
-print "In 15 years your will be $future_age.\n";
+print "In 15 years you will be $future_age.\n";
