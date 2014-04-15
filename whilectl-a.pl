@@ -1,7 +1,7 @@
-#1/usr/bin/perl
+#!/usr/bin/perl
 $var = 0;
-while($var > 10)
+while($var < 10)
  {
-  print "Variable is now $var";
+  print "Variable is now $var\n";
   $var += 1;
  }

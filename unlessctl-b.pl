@@ -17,14 +17,14 @@ else
  }
 unless(! ($int eq 'both'))
  {
-  print "Sorry, we can't compare two different data types.\n"
+  print "Sorry, we can't compare integers and strings.\n"
  }
 else
  {
   if($int == 'string')
    {
-    $input_1 = lc($input_1);
-    $input_2 = lc($input_2);
+    $input_1 = uc($input_1);
+    $input_2 = uc($input_2);
     unless($input_2 le $input_1)
      {
       print "$input_1 comes before $input_2\n";

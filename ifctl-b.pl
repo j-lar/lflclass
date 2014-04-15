@@ -29,6 +29,6 @@ elsif($input_1+0 eq $input_1 && $input_2+0 eq $input_2)
  }
 else
  {
-  print "Sorry, we can't compare two different data types.\n"
+  print "Sorry, we can't compare integers and strings.\n"
  }
 
