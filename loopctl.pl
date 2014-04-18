@@ -16,7 +16,7 @@ for($count = 1; $count <= $num_guesses; $count++)
      print "You entered nothing. ";
 	 redo;
    }
-  elsif($guess eq "next")
+  elsif(lc$guess eq "next")
    {
     print "Ok, let's start over.\n";
 	print "Please enter a name.\n";
@@ -26,15 +26,19 @@ for($count = 1; $count <= $num_guesses; $count++)
 	print $clear_screen;
 	redo;
    }
+  elsif(lc$guess eq "quit")
+   {
+    print "Ok, goodbye then\n";
+    last
+   }
   elsif(uc$guess eq uc$name)
    {
     print "You got it!\n";
-    last
+	last
    }
   print "Wrong!\n";
  }
 print "-------\n";
 print "The answer was \U$name.\n";
-print "Your last guess was \U$guess.\n";
 print "-------\n";
 print "Game over.\n";
