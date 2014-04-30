@@ -7,7 +7,7 @@ push @name, $input;
 print "Please enter your first name\n";
 chomp($input = <STDIN>);
 push @name, $input;
-print "Please enter your last name\n";
+print "Please enter your middle name\n";
 chomp($input = <STDIN>);
 push @name, $input;
 
