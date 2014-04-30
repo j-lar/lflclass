@@ -27,6 +27,13 @@ else
  }
 foreach $animal(@animals)
  {
-# add logic here to use a/an depending on the animal  
-  print "\ta $animal\n";
+# add logic here to use a/an depending on the animal once we learn how
+  if($animal =~ /^[aeiou]/i )
+  {
+   print "\tan $animal\n";
+  }
+  else
+   {
+    print "\ta $animal\n";
+   }
  }
