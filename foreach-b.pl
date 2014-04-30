@@ -25,15 +25,26 @@ else
  {
   print "Ok, that's a good list. You saw:\n";
  }
+($last) = @animals[-1];
 foreach $animal(@animals)
  {
-# add logic here to use a/an depending on the animal once we learn how
-  if($animal =~ /^[aeiou]/i )
-  {
-   print "\tan $animal\n";
-  }
+  if($animal ne $last)
+   {
+    if($animal =~ /^[aeiou]/i )
+    {
+     print "\tAn $animal\n";
+    }
+   else
+    {
+     print "\tA $animal\n";
+    }
+   }
+  elsif($animal =~ /^[aeiou]/i )
+   {
+    print "\tAnd an $animal\n";
+   }
   else
    {
-    print "\ta $animal\n";
+    print "\tAnd a $animal\n";
    }
- }
+  }
