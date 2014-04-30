@@ -6,11 +6,12 @@
 #Then go through the array and print the animals that were put into the array.
 print `clear`;
 print "Please enter the names of some zoo animals. Type 'quit' when done\n";
-while($input ne 'quit')
+while($input ne lc'quit')
  {
   chomp($input = <STDIN>);
   push @animals, $input;
  }
+pop @animals;
 $count = @animals;
 if($count <= 3)
  {
