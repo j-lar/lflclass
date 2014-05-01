@@ -2,13 +2,13 @@
 
 print `clear`;
 print "Please enter your last name\n";
-chomp($input = <STDIN>);
+chomp( $input = <STDIN> );
 push @name, $input;
 print "Please enter your first name\n";
-chomp($input = <STDIN>);
+chomp( $input = <STDIN> );
 push @name, $input;
 print "Please enter your middle name\n";
-chomp($input = <STDIN>);
+chomp( $input = <STDIN> );
 push @name, $input;
 
 $m_name = pop @name;

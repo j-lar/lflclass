@@ -2,13 +2,13 @@
 
 print `clear`;
 print "Please enter your last name\n";
-chomp($input = <STDIN>);
+chomp( $input = <STDIN> );
 unshift @name, $input;
 print "Please enter your first name\n";
-chomp($input = <STDIN>);
+chomp( $input = <STDIN> );
 unshift @name, $input;
 print "Please enter your last name\n";
-chomp($input = <STDIN>);
+chomp( $input = <STDIN> );
 unshift @name, $input;
 
 $m_name = shift @name;

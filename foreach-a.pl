@@ -5,7 +5,6 @@
 #Using a foreach statement, print the name of the animals you saw at the zoo today.
 
 @animals = qw/ elephant lion tiger bear jackalope /;
-foreach $animal(@animals)
- {
-  print "\t$animal\n";
- }
+foreach $animal (@animals) {
+    print "\t$animal\n";
+}
