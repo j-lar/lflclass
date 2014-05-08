@@ -11,7 +11,9 @@ $count = 0;
 while ($count < 5) {
 	print "Please enter a month of the year.\n";
     chomp($month = <STDIN>);
-    print "Ok, thanks! Now enter the name of a holidy that occurs in that month.\n";
+#need to check to see if the month has been previously used...
+#hashes don't work that way.	
+    print "Ok, thanks! Now enter the name of a holiday that occurs in that month.\n";
     chomp($holiday = <STDIN>);
     $holiday_hash{ $month } = $holiday;
 	$count++;
