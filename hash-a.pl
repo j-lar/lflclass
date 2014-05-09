@@ -7,18 +7,22 @@
 #subroutine called print_out() ;passing the hash as an argument. Within
 #the subroutine, print out all five months and the associated holidays.
 
-$count = 0;
-while ( $count < 5 ) {
+for ( my $count = 0; $count < 5; $count++ ) {
     print "Please enter a month of the year.\n";
     chomp( $month = <STDIN> );
-
-    #need to check to see if the month has been previously used...
-    #hashes don't work that way.
-    print
-"Ok, thanks! Now enter the name of a holiday that occurs in that month.\n";
-    chomp( $holiday = <STDIN> );
-    $holiday_hash{$month} = $holiday;
-    $count++;
+	#need to check to see if the month has been previously used...
+	#would be cool to append to the month name if it's a duplicate, and
+	#then strip off the appended character when printing it back out.
+	#later...
+	if ( exists $holiday_hash{$month} ) {
+		print "Sorry! I can only do one holiday per month. Hashes, eh?!\n";
+		redo;
+	}
+    else {
+		print "Ok, thanks! Now enter the name of a holiday that occurs in that month.\n";
+		chomp( $holiday = <STDIN> );
+		$holiday_hash{$month} = $holiday;
+	}
 }
 
 print `clear`;
