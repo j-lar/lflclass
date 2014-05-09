@@ -7,20 +7,11 @@
 #(and print the holidays as well) in order they were input. Hint: Don't use the month as the key...also think about accepting the month and holiday as a single input.
 
 sub input {
-    for ( my $count = 0 ; $count < 5 ; $count++ ) {
-        print "Please enter a month of the year, or \"Done\" if finished.\n";
+    my $count = 0;
+	while ( ) {
+		print "Please enter a month of the year, or \"Done\" if finished.\n";
         chomp( my $month = <STDIN> );
-
-        #need to check to see if the month has been previously used...
-        #would be cool to append to the month name if it's a duplicate, and
-        #then strip off the appended character when printing it back out.
-        #later...
-        if ( exists $holiday_hash{$month} ) {
-            print "Sorry! I can only do one holiday per month. Hashes, eh?!\n";
-            redo;
-        }
-        elsif ( lc $month eq "done" ) {
-            print "Ok, here's the list of months and holidays you entered:\n";
+        if ( lc $month eq "done" ) {
             last;
         }
         else {
@@ -28,6 +19,7 @@ sub input {
             chomp( my $holiday = <STDIN> );
             $holiday_hash{$count} = "$month: $holiday";
         }
+		$count++;
     }
 }
 
