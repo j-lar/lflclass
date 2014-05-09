@@ -26,7 +26,7 @@ sub input {
         else {
             print "Ok, thanks! Now enter the name of a holiday that occurs in that month.\n";
             chomp( my $holiday = <STDIN> );
-            $holiday_hash{$month} = $holiday;
+            $holiday_hash{$count} = "$month: $holiday";
         }
     }
 }
@@ -34,8 +34,8 @@ sub input {
 sub print_out {
     print `clear`;
     print "Here are your months and Holidays:\n\n";
-    while ( ( $key, $value ) = each %holiday_hash ) {
-        print "$key\: $value\n";
+    foreach $key ( sort keys %holiday_hash ) {
+        print "$holiday_hash{$key}\n";
     }
     print "\n";
 }
