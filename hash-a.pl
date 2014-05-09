@@ -32,5 +32,6 @@ sub print_out {
     while ( ( $key, $value ) = each %holiday_hash ) {
         print "$key\: $value\n";
     }
+	print "\n";
 }
 print_out(%holiday_hash);
