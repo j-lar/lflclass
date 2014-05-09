@@ -34,4 +34,4 @@ sub print_out {
     }
     print "\n";
 }
-print_out(%holiday_hash);
+&print_out(%holiday_hash);

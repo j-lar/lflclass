@@ -31,5 +31,5 @@ sub print_out {
     }
     print "\n";
 }
-input();
-print_out(%holiday_hash);
+&input();
+&print_out(%holiday_hash);
