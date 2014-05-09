@@ -8,22 +8,24 @@
 #the subroutine, print out all five months and the associated holidays.
 
 $count = 0;
-while ($count < 5) {
-	print "Please enter a month of the year.\n";
-    chomp($month = <STDIN>);
-#need to check to see if the month has been previously used...
-#hashes don't work that way.	
-    print "Ok, thanks! Now enter the name of a holiday that occurs in that month.\n";
-    chomp($holiday = <STDIN>);
-    $holiday_hash{ $month } = $holiday;
-	$count++;
+while ( $count < 5 ) {
+    print "Please enter a month of the year.\n";
+    chomp( $month = <STDIN> );
+
+    #need to check to see if the month has been previously used...
+    #hashes don't work that way.
+    print
+"Ok, thanks! Now enter the name of a holiday that occurs in that month.\n";
+    chomp( $holiday = <STDIN> );
+    $holiday_hash{$month} = $holiday;
+    $count++;
 }
 
 print `clear`;
 print "Here are your months and Holidays:\n\n";
 
 sub print_out {
-    while(($key, $value) = each %holiday_hash) {
+    while ( ( $key, $value ) = each %holiday_hash ) {
         print "$key\: $value\n";
     }
 }
