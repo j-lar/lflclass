@@ -1,0 +1,43 @@
+#!/usr/bin/perl
+#Alter exercise A with the following changes:
+#1) Call a subroutine called input() to print the requests and accept the input
+#2) Within this subroutine use "my" variables for the input entered by the user
+#3) Accept input until the user enters "Done" in response to the month request. Use the same print_out() subroutine to print the results.
+#(BONUS) For the brave of heart - figure out a method using the second program to print out the months
+#(and print the holidays as well) in order they were input. Hint: Don't use the month as the key...also think about accepting the month and holiday as a single input.
+
+sub input {
+    for ( my $count = 0 ; $count < 5 ; $count++ ) {
+        print "Please enter a month of the year, or \"Done\" if finished.\n";
+        chomp( my $month = <STDIN> );
+
+        #need to check to see if the month has been previously used...
+        #would be cool to append to the month name if it's a duplicate, and
+        #then strip off the appended character when printing it back out.
+        #later...
+        if ( exists $holiday_hash{$month} ) {
+            print "Sorry! I can only do one holiday per month. Hashes, eh?!\n";
+            redo;
+        }
+        elsif ( lc $month eq "done" ) {
+            print "Ok, here's the list of months and holidays you entered:\n";
+            last;
+        }
+        else {
+            print "Ok, thanks! Now enter the name of a holiday that occurs in that month.\n";
+            chomp( my $holiday = <STDIN> );
+            $holiday_hash{$month} = $holiday;
+        }
+    }
+}
+
+sub print_out {
+    print `clear`;
+    print "Here are your months and Holidays:\n\n";
+    while ( ( $key, $value ) = each %holiday_hash ) {
+        print "$key\: $value\n";
+    }
+    print "\n";
+}
+input();
+print_out(%holiday_hash);
