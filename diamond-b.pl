@@ -7,7 +7,6 @@
 
 print `clear`;
 print "-------\n";
-my @lines;
 while ( <> ) {
 	push (@lines, $_);
 }
