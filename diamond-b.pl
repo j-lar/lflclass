@@ -9,10 +9,8 @@ print `clear`;
 print "-------\n";
 my @lines;
 while ( <> ) {
-	chomp;
-	unshift (@lines, $_);
+	push (@lines, $_);
 }
-for ( $i = 0;  $i <= ($#lines); $i++ ) {
-	print "@lines[$i]\n";
-}
+@lines = reverse(@lines);
+print @lines;
 print "-------\n";
