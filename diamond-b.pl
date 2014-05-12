@@ -11,6 +11,5 @@ my @lines;
 while ( <> ) {
 	push (@lines, $_);
 }
-@lines = reverse(@lines);
-print @lines;
+print reverse(@lines);
 print "-------\n";
