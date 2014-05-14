@@ -8,14 +8,11 @@
 print `clear`;
 print "Please enter some some lines of input. Press CONTROL-D when done.\n";
 while (<>) {
-	chomp;
-	push @input, $_;
+    push @input, $_;
 }
 
 print "-------\n";
 
-for ($i = 0; $i <= $#input; $i++) {
-	print "Input was: $input[$i]\n";
-}
+print "Input was:\n @input\n";
 
 print "-------\n";
