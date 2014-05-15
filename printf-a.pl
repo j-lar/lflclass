@@ -7,9 +7,7 @@
 
 print `clear`;
 print "Please enter some some lines of input. Press CONTROL-D when done.\n";
-while (<>) {
-    push @input, $_;
-}
+chomp(@input = <STDIN>);
 
 print "-------\n";
 
