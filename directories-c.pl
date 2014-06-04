@@ -13,23 +13,29 @@ my $home_dir = "/home/jlarsen";
 my $junk_dir = "$home_dir/junk";
 my $sub_test = "test";
 my $sub_tmp = "tmp";
+my $entry;
 
 mkdir "$junk_dir/$sub_test" or die "Fail. $!";
 system("ls -lR $junk_dir");
 
-#this works, but should be more dynamic...
-chdir $junk_dir;
-unlink glob "*";
-chdir $sub_test;
-unlink glob "*";
-chdir "$junk_dir";
-rmdir $sub_test;
-chdir $sub_tmp;
-unlink glob "*";
-chdir "$junk_dir";
-rmdir $sub_tmp;
-chdir $home_dir;
+opendir DIR, $junk_dir or die "Couldn't open $junk_dir: $!";
+
+foreach $entry (readdir DIR) {
+	if ( -d $entry ) {
+		chdir $entry;
+		unlink glob "*";
+		chdir $junk_dir;
+		rmdir $entry;
+	}
+	elsif ( -f $entry ) {
+		unlink $entry;
+	}
+}
+
+closedir(DIR);
+
 rmdir $junk_dir;
+
 
 if ( -e $junk_dir ) {
 	print "$junk_dir still exists, something went wrong...\n";
