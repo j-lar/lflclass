@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 #use warnings;
 use strict;
-#system("clear");
+system("clear");
 
 #There are 3 files in your home directory: a.txt, b.txt, and c.txt. Use the Unix "id" command at the
 #command prompt to determine your userid (uid) and groupid (gid) that will be used in the program. Have
